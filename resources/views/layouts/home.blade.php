@@ -4,7 +4,7 @@
     <title> @yield('title') </title>
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
-    <meta name="author" content="Kahtalı Miçe">
+    <meta name="author" content="Efekan Gündüz">
     <link href="{{asset('assets')}}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!--web-fonts-->
@@ -30,6 +30,7 @@
 <body>
 @include('home._header')
 @include('home._slider')
+@include('home._topgrid')
 @section('content')
     İçerik Alanı
 @show
