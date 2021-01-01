@@ -55,10 +55,13 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                        @auth
                         <a class="dropdown-item" href="#">Profile</a>
                         <a class="dropdown-item" href="#">Settings</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Log out</a>
+                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                        <a href="{{ route('admin_logout') }}"class"d-block">Logout</a>
+                        @endauth
                     </div>
                 </li>
             </ul>
