@@ -4,21 +4,25 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
-    <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
+    <div class="logo"><a href="{{route('admin_home')}}" class="simple-text logo-normal">
+            HOME
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
-                <a class="nav-link" href="./dashboard.html">
-                    <i class="material-icons">dashboard</i>
-                    <p>Dashboard</p>
+            <li class="nav-item has-treeview">
+                <a class="nav-link" href="{{route('admin_category')}}">
+                    <i class="nav-icon fas fa-copy"></i>
+                    Category
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
-                    <i class="material-icons">person</i>
-                    <p>User Profile</p>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        Products
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">6</span>
+                    </p>
                 </a>
             </li>
             <li class="nav-item ">
@@ -49,18 +53,6 @@
                 <a class="nav-link" href="./notifications.html">
                     <i class="material-icons">notifications</i>
                     <p>Notifications</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./rtl.html">
-                    <i class="material-icons">language</i>
-                    <p>RTL Support</p>
-                </a>
-            </li>
-            <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
                 </a>
             </li>
         </ul>
