@@ -53,6 +53,12 @@
                     <p>Notifications</p>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ route('admin_setting') }}">
+                    <i class="fa fa-cog"></i>
+                    <p>Settings</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
