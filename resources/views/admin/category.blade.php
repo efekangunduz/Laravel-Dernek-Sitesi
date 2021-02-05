@@ -37,7 +37,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Parent</th>
-                                    <th>Title</th>
+                                    <th>Title(s)</th>
                                     <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -47,7 +47,9 @@
 
                                     <tr>
                                         <td>{{$rs->id}}</td>
-                                        <td>{{$rs->parent_id}}</td>
+                                        <td>
+                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                        </td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->status}}</td>
                                         <td><a class="btn btn-primary btn-round" href="{{route('admin_category_edit',['id'=>$rs->id])}}">Edit</a></td>

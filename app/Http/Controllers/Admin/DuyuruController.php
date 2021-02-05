@@ -30,7 +30,7 @@ class DuyuruController extends Controller
      */
     public function create()
     {
-        $datalist= Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.duyuru_add', ['datalist' => $datalist]);
     }
 
@@ -74,7 +74,7 @@ class DuyuruController extends Controller
     public function edit(Duyuru $duyuru,$id)
     {
         $data= Duyuru::find($id);
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.duyuru_edit', ['data'=>$data,'datalist'=>$datalist]);
     }
 
