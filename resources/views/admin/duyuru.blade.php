@@ -39,7 +39,6 @@
                                     <th>Category</th>
                                     <th>Title</th>
                                     <th>Description</th>
-                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -49,10 +48,9 @@
 
                                     <tr>
                                         <td>{{$rs->id}}</td>
-                                        <td>{{$rs->category_id}}</td>
+                                        <td>{{$rs->category->title}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->description}}</td>
-                                        <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
                                         <td><a class="btn btn-primary btn-round" href="{{route('admin_duyuru_edit',['id'=>$rs->id])}}"> Edit</a></td>
                                         <td><a class="btn btn-primary btn-round" href="{{route('admin_duyuru_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete? Are you sure?')">Delete</a></td>
