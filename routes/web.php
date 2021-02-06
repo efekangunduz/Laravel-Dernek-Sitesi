@@ -4,17 +4,16 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/home2', function () {
-    return view('welcome');
-});
-Route::redirect('anasayfa', '/home')->name('anasayfa');
 
-Route::get('/', function () {
-    return view('home.index');
+Route::get('/', function () {return view('home.index');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/references',[HomeController::class, 'references'])->name('references');
+Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
+
 //Route::get('test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
@@ -47,7 +46,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

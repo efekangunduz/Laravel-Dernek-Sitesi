@@ -4,7 +4,7 @@
         <i class="fa fa-times"></i>
     </div>
     <!-- Logo -->
-    <a href="index.html" class="search-logo"><img src="img/core-img/logo2.png" alt=""></a>
+    <a href="{{route('home')}}" class="search-logo"><img src="({{asset('assets')}}/img/core-img/logo2.png" alt=""></a>
     <!-- Search Form -->
     <div class="search-form">
         <form action="#" method="get">
@@ -15,7 +15,7 @@
     <!-- Copwrite Text -->
     <div class="copywrite-text">
         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{$setting->company}}
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
     </div>
 </div>
@@ -24,6 +24,6 @@
 <!-- ##### Preloader ##### -->
 <div id="preloader">
     <div class="circle">
-        <img src="img/core-img/church.png" alt="">
+        <img src="({{asset('assets')}}/img/core-img/church.png" alt="">
     </div>
 </div>

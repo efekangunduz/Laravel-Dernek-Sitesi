@@ -1,3 +1,4 @@
+
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
     <!-- Top Header Area -->
@@ -8,8 +9,8 @@
                     <div class="top-header-content h-100 d-flex align-items-center justify-content-end">
                         <!-- Next Events Countdown -->
                         <div class="next-events-countdown d-flex align-items-center">
-                            <p>Next Big Event:</p>
-                            <div class="events-cd" data-countdown="2022/01/01"></div>
+                                <p>En yakın Etkinlik:</p>
+                            <div class="events-cd" data-countdown="2021/02/12"></div>
                         </div>
                     </div>
                 </div>

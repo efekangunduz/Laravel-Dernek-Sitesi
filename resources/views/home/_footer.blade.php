@@ -1,7 +1,10 @@
+@php
+    $setting= \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer-area">
     <!-- Main Footer Area -->
-    <div class="main-footer-area section-padding-100-0 bg-img foo-bg-overlay" style="background-image: url(img/bg-img/bg-1.jpg);">
+    <div class="main-footer-area section-padding-100-0 bg-img foo-bg-overlay" style="background-image: url({{asset('assets')}}/img/bg-img/bg-1.jpg);">
         <div class="container">
             <div class="row">
 
@@ -13,15 +16,15 @@
                                 <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
                             </div>
                             <div class="footer-social-info">
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                @if( $setting->facebook != null)<a target="_blank" href="{{$setting->facebook}}"><i class="fa fa-facebook"></i></a>@endif
+                                @if( $setting->twitter != null)<a target="_blank" href="{{$setting->twitter}}"><i class="fa fa-twitter"></i></a>@endif
+                                @if( $setting->instagram != null)<a target="_blank" href="{{$setting->instagram}}"><i class="fa fa-instagram"></i></a>@endif
+                                @if( $setting->youtube != null)<a target="_blank" href="{{$setting->youtube}}"><i class="fa fa-youtube"></i></a>@endif
                             </div>
                         </div>
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{ $setting->company }}
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -37,19 +40,19 @@
                         <!-- Single Contact Area -->
                         <div class="single-contact-area mb-30">
                             <p>Address:</p>
-                            <span>1481 Creekside Lane Avila <br>Beach, CA 93424 </span>
+                            <span>{{ $setting->address }}</span>
                         </div>
 
                         <!-- Single Contact Area -->
                         <div class="single-contact-area mb-30">
-                            <p>Phone:</p>
-                            <span>+53 345 7953 32453 <br>+53 345 7557 822112</span>
+                            <p>Phone:<br>Fax:</p>
+                            <span>{{$setting->phone}} <br>{{$setting->fax}}</span>
                         </div>
 
                         <!-- Single Contact Area -->
                         <div class="single-contact-area mb-30">
                             <p>Email:</p>
-                            <span>yourmail@gmail.com</span>
+                            <span>{{$setting->email}}</span>
                         </div>
                     </div>
                 </div>
@@ -66,10 +69,11 @@
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Sermons</a></li>
                                 <li><a href="#">Ministries</a></li>
-                                <li><a href="#">Causes</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Quotes</a></li>
                                 <li><a href="#">News</a></li>
+                                @guest
+                                <li><a href="{{route('admin_login')}}">Login</a></li>
+                                <li><a href="/register">Register</a></li>
+                                @endguest
                                 <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>

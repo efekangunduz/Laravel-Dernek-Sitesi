@@ -1,12 +1,8 @@
-
-
 @extends('layouts.home')
 
-@section('title', 'Laravel Dernek Sitesi')
-@section('description')
-    Sizinle bir gönüllü daha fazlayız..
-    @endsection
-@section('keywords', 'Kimsesizler, Yardım, Umut, Gönüllü, Bağış')
+@section('title',$setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
 
 @section('content')
 
