@@ -1,64 +1,86 @@
-<!--- banner Slider starts Here --->
-<script src="{{asset('assets')}}/js/responsiveslides.min.js"></script>
-<script>
-    // You can also use "$(window).load(function() {"
-    $(function () {
-        // Slideshow 4
-        $("#slider4").responsiveSlides({
-            auto: true,
-            pager: true,
-            nav: true,
-            speed: 500,
-            namespace: "callbacks",
-            before: function () {
-                $('.events').append("<li>before event fired.</li>");
-            },
-            after: function () {
-                $('.events').append("<li>after event fired.</li>");
-            }
-        });
+<!-- ##### Hero Area Start ##### -->
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url({{asset('assets')}}/img/bg-img/bg-2.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-end">
+                    <div class="col-12 col-lg-7">
+                        <!-- Slides Content -->
+                        <div class="hero-slides-content">
+                            <h6 class="date" data-animation="fadeInUp" data-delay="100ms">July 2018</h6>
+                            <h3 data-animation="fadeInUp" data-delay="300ms">Let God guide your path</h3>
+                            <h2 data-animation="fadeInUp" data-delay="500ms">Children Camp</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Cras iaculis eleifend arcu, non cursus sem. Morbi viverra varius nisl, ac varius mauris interdum sit amet. Aenean ac fermentum neque. Nullam tincidunt et nisi quis porttitor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Button -->
+            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <a href="#" class="btn faith-btn active">Sunday Workship: 10:30 AM</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    });
-</script>
-<!----//End-slider-script---->
-<!-- Slideshow 4 -->
-<div  id="top" class="callbacks_container">
-    <ul class="rslides" id="slider4">
-        <li>
-            <div class="banner">
-                <div class="container">
-                    <div class="banner-main">
-                        <h2> HELP TURN<br>TEARS TO SMILES</h2>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud".</p>
-                        <a href="#">DONATE</a>
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url({{asset('assets')}}/img/bg-img/bg-1.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-end">
+                    <div class="col-12 col-lg-7">
+                        <!-- Slides Content -->
+                        <div class="hero-slides-content">
+                            <h6 class="date" data-animation="fadeInUp" data-delay="100ms">July 2018</h6>
+                            <h3 data-animation="fadeInUp" data-delay="300ms">Let God guide your path</h3>
+                            <h2 data-animation="fadeInUp" data-delay="500ms">Children Camp</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Cras iaculis eleifend arcu, non cursus sem. Morbi viverra varius nisl, ac varius mauris interdum sit amet. Aenean ac fermentum neque. Nullam tincidunt et nisi quis porttitor.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </li>
-        <li>
-            <div class="banner-two">
+            <!-- Event Button -->
+            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
                 <div class="container">
-                    <div class="banner-main">
-                        <h2> CHILDREN CARE</h2>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud".</p>
-                        <a href="#">DONATE</a>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <a href="#" class="btn faith-btn active">Sunday Workship: 10:30 AM</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </li>
-        <li>
-            <div class="banner-three">
-                <div class="container">
-                    <div class="banner-main">
-                        <h2> HELP TURN<br>TEARS TO SMILES</h2>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud". </p>
-                        <a href="#">DONATE</a>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-<div class="clearfix"> </div>
-<!--- banner Slider Ends Here --->
+        </div>
 
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-img bg-overlay" style="background-image: url({{asset('assets')}}/img/bg-img/bg-3.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 col-lg-7">
+                        <!-- Slides Content -->
+                        <div class="hero-slides-content">
+                            <h6 class="date" data-animation="fadeInUp" data-delay="100ms">July 2018</h6>
+                            <h3 data-animation="fadeInUp" data-delay="300ms">Let God guide your path</h3>
+                            <h2 data-animation="fadeInUp" data-delay="500ms">Children Camp</h2>
+                            <p data-animation="fadeInUp" data-delay="700ms">Cras iaculis eleifend arcu, non cursus sem. Morbi viverra varius nisl, ac varius mauris interdum sit amet. Aenean ac fermentum neque. Nullam tincidunt et nisi quis porttitor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Button -->
+            <div class="next-event-btn" data-animation="bounceInDown" data-delay="900ms">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <a href="#" class="btn faith-btn active">Sunday Workship: 10:30 AM</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Hero Area End ##### -->

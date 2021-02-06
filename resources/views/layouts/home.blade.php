@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
     <title> @yield('title') </title>
-    <meta name="description" content="@yield('description')">
-    <meta name="keywords" content="@yield('keywords')">
+    <meta name="description" content=" @yield('description') ">
+    <meta name="keywords" content=" @yield('keywords') ">
     <meta name="author" content="Efekan Gündüz">
-    <link href="{{asset('assets')}}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets')}}/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <!--web-fonts-->
-    <link href='{{asset('assets')}}/http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!--js-->
-    <script src="{{asset('assets')}}/js/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="{{asset('assets')}}/js/move-top.js"></script>
-    <script type="text/javascript" src="{{asset('assets')}}/js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
-    <!-- //end-smoth-scrolling -->
+    <!-- Favicon -->
+    <link rel="icon" href="{{asset('assets')}}/img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{asset('assets')}}/style.css">
+
     @yield('css')
     @yield('headerjs')
 </head>
+
 <body>
+@include('home._wrapper')
 @include('home._header')
-@include('home._slider')
-@include('home._topgrid')
 @section('content')
     İçerik Alanı
 @show

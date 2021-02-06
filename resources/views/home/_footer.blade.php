@@ -1,81 +1,106 @@
-<!--footer start here-->
-<div class="footer">
-    <div class="container">
-        <div class="footer-main">
-            <div class="col-md-4 footer-top">
-                <h3>ABOUT US </h3>
-                <p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.  </p><br>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-            </div>
-            <div class="col-md-2 footer-top">
-                <h3>SITEMAP </h3>
-                <ul>
-                    <li><a href="index.html"> HOME</a></li>
-                    <li><a href="about.html"> ABOUT</a></li>
-                    <li><a href="give.html"> DONATE</a></li>
-                    <li><a href="whatwedo.html"> WHAT WE DO</a></li>
-                    <li><a href="give.html"> GIVE</a></li>
-                    <li><a href="contact.html"> CONTACT US</a></li>
-                </ul>
-                <div class="clear fix"> </div>
-            </div>
-            <div class="col-md-4 footer-top">
-                <h3>RECENT-NEWS</h3>
-                <div class="news">
-                    <h4>VIVAMUS VITAE VEHICULA LACUS</h4>
-                    <p>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="col">
-                        <p>POSTED ON NOV 30</p>
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area">
+    <!-- Main Footer Area -->
+    <div class="main-footer-area section-padding-100-0 bg-img foo-bg-overlay" style="background-image: url(img/bg-img/bg-1.jpg);">
+        <div class="container">
+            <div class="row">
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="d-flex flex-wrap mb-100">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                            </div>
+                            <div class="footer-social-info">
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="copywrite-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
                     </div>
                 </div>
-                <div class="news">
-                    <h4>VIVAMUS VITAE VEHICULA LACUS</h4>
-                    <p>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="col">
-                        <p>POSTED ON NOV 30</p>
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>Contact Us</h6>
+                        </div>
+
+                        <!-- Single Contact Area -->
+                        <div class="single-contact-area mb-30">
+                            <p>Address:</p>
+                            <span>1481 Creekside Lane Avila <br>Beach, CA 93424 </span>
+                        </div>
+
+                        <!-- Single Contact Area -->
+                        <div class="single-contact-area mb-30">
+                            <p>Phone:</p>
+                            <span>+53 345 7953 32453 <br>+53 345 7557 822112</span>
+                        </div>
+
+                        <!-- Single Contact Area -->
+                        <div class="single-contact-area mb-30">
+                            <p>Email:</p>
+                            <span>yourmail@gmail.com</span>
+                        </div>
                     </div>
                 </div>
-                <div class="clear fix"> </div>
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>Usefull Links</h6>
+                        </div>
+                        <nav>
+                            <ul class="useful-links">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Sermons</a></li>
+                                <li><a href="#">Ministries</a></li>
+                                <li><a href="#">Causes</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">Quotes</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="footer-widget mb-100">
+                        <div class="widget-title">
+                            <h6>Why Choose us?</h6>
+                        </div>
+                        <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque.</p>
+                        <a href="#" class="btn faith-btn mt-70">Sunday Workship: 10:30 AM</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2 footer-top">
-                <h3> OUR ADDRESS</h3>
-                <P>SIT AMET LACINIA.</p>
-                <p>MASS VARIUS VITAE.</p>
-                <p>	VIVAMUS VITAE.</p>
-                <p>	VECHICULA.</p>
-                <p> PH:123456789,</p>
-                <p> EMAIL:<a href="mailto:example@email.com"> someemailid@email.com</a></P>
-            </div>
-            <div class="clear fix"> </div>
         </div>
     </div>
-</div>
-<!--/footer end here-->
-<!--copyrights start here-->
-<div class="copyright">
-    <div class="container">
-        <div class="copy-right-main">
-            <div class="col-md-6 copy-left">
-                <p>2014 &copy Template by <a href="http://w3layouts.com/">  W3LAYOUTS</a></p>
-            </div>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    /*
-                    var defaults = {
-                          containerID: 'toTop', // fading element id
-                        containerHoverID: 'toTopHover', // fading element hover id
-                        scrollSpeed: 1200,
-                        easingType: 'linear'
-                     };
-                    */
+</footer>
+<!-- ##### Footer Area Start ##### -->
 
-                    $().UItoTop({ easingType: 'easeOutQuart' });
-
-                });
-            </script>
-            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
-
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="{{asset('assets')}}/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="{{asset('assets')}}/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="{{asset('assets')}}/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="{{asset('assets')}}/js/plugins/plugins.js"></script>
+<script src="{{asset('assets')}}/js/plugins/audioplayer.js"></script>
+<!-- Active js -->
+<script src="{{asset('assets')}}/js/active.js"></script>
