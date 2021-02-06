@@ -12,6 +12,7 @@ class CategoryController extends Controller
    protected $appends= [
        'getParentsTree'
    ];
+
    public static function getParentsTree($category, $title) //terse çalışır childrendan parenta
    {
        if($category->parent_id == 0)
@@ -19,7 +20,7 @@ class CategoryController extends Controller
            return $title;
        }
        $parent= Category::find($category->parent_id);
-       $title= $parent->title . ' / ' . $title;
+       $title= $parent->title . ' > ' . $title;
 
        return CategoryController::getParentsTree($parent, $title);
    }

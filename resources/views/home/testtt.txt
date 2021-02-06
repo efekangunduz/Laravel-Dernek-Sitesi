@@ -1,0 +1,82 @@
+<!-- Nav Start -->
+                        @php
+                        $parentCategories = \App\Http\Controllers\HomeController::categorylist()
+                        @endphp
+                       <div class="classynav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="cn-dropdown-item has-down"><div>
+                                        <span class="classy-menu">Categories</span>
+                                        <ul class="dropdown">
+                                            @foreach($parentCategories as $rs)
+                                                <li class="cn-dropdown-item has-down">
+                                                    <a>{{$rs->title}}</a>
+                                                    <div class="classy-nav-container">
+                                                        @if(count($rs->children))
+                                                            @include('home.categorytree', ['children'=>$rs->children])
+                                                        @endif
+
+
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="ministries.html">Ministries</a></li>
+                                <li><a href="sermons.html">Sermons</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+
+                            <!-- Search Button -->
+                            <div class="search-btn">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+
+                            <!-- Donate Button -->
+                            <div class="donate-btn">
+                                <a href="#">Send Donations</a>
+                            </div>
+
+                        </div>
+                        <!-- Nav End -->
+
+ <!-- Nav Start -->
+                        @php
+                        $parentCategories = \App\Http\Controllers\HomeController::categorylist()
+                        @endphp
+                       <div class="classynav">
+                           <ul>
+
+                               <li><a href="index.html">Home</a></li>
+                               <li><a href="#">Categories</a>
+                                   <ul class="dropdown">
+                                       @foreach($parentCategories as $rs)
+                                       <li class="dropdown"><a href="#">{{$rs->title}}</a>
+                                           <div class="classy-menu">
+                                               <div class="row">
+                                                   @if(count($rs->children))
+                                                       @include('home.categorytree', ['children'=>$rs->children])
+                                                   @endif
+                                               </div>
+                                           </div>
+                                       </li>
+                                   </ul>
+                               </li>
+                               <li><a href="ministries.html">Ministries</a></li>
+                               <li><a href="sermons.html">Sermons</a></li>
+                               <li><a href="contact.html">Contact</a></li>
+                           </ul>
+
+                            <!-- Search Button -->
+                            <div class="search-btn">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+
+                            <!-- Donate Button -->
+                            <div class="donate-btn">
+                                <a href="#">Send Donations</a>
+                            </div>
+
+                        </div>
+                        <!-- Nav End -->

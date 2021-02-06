@@ -26,6 +26,7 @@
 <body>
 @include('home._wrapper')
 @include('home._header')
+@include('home._category')
 @section('content')
     İçerik Alanı
 @show
