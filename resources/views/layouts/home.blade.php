@@ -1,4 +1,6 @@
-
+<?php
+$setting= \App\Http\Controllers\HomeController::getsetting();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
