@@ -51,7 +51,7 @@
                                 <li><a href="{{route('faq')}}">FAQ</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="{{route('admin_login')}}" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true">
+                                    <a class="nav-link" href="" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true">
                                         <i class="material-icons">Hesap</i>
                                         <p class="d-lg-none d-md-block">
                                             Account
@@ -67,7 +67,7 @@
                                             <a href="{{ route('logout') }}" class="d-block">Logout</a>
                                         @endauth
                                         @guest
-                                            <a href="{{route('admin_login')}}">Login</a>
+                                            <a href="{{route('login')}}">Login</a>
                                             <a href="/register">Join</a>
                                         @endguest
                                     </div>

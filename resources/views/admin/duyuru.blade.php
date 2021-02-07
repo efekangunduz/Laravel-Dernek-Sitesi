@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
 @section('title', 'Duyuru List')
-
+@section('javascript')
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+@endsection
 @section('content')
 <div class="content">
     <div class="content-wrapper">

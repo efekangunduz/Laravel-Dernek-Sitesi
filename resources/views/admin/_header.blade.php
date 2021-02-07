@@ -57,7 +57,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                         @auth
                         <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="">Settings</a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="d-block">{{Auth::user()->name}}</a>
                         <a href="{{ route('logout') }}" class="d-block">Logout</a>
