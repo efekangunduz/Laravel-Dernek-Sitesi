@@ -10,9 +10,10 @@ Route::get('/', function () {return view('home.index');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/references',[HomeController::class, 'references'])->name('references');
 Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 
 //Route::get('test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
@@ -37,6 +38,14 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\DuyuruController::class,'update'])->name('admin_duyuru_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\DuyuruController::class,'destroy'])->name('admin_duyuru_delete');
         Route::get('show', [\App\Http\Controllers\Admin\DuyuruController::class,'show'])->name('admin_duyuru_show');
+    });
+#message
+    Route::prefix('messages')->group(function(){
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class,'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class,'edit'])->name('admin_message_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class,'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class,'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class,'show'])->name('admin_message_show');
     });
 
 #Setting

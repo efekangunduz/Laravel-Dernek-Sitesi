@@ -9,16 +9,15 @@
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item has-treeview">
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('admin_category')}}">
-                    <i class="nav-icon fas fa-copy"></i>
+                    <i class="material-icons">content_paste</i>
                     Kategori
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin_duyurus') }}" class="nav-link">
-                    <p>
-                        <i class="material-icons">content_paste</i>
+                    <p><i class="material-icons">content_paste</i>
                         Duyurular
                     </p>
                 </a>
@@ -30,9 +29,9 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./typography.html">
+                <a class="nav-link" href="{{ route('admin_message') }}">
                     <i class="material-icons">library_books</i>
-                    <p>Typography</p>
+                    <p>Contact Messages</p>
                 </a>
             </li>
             <li class="nav-item ">
