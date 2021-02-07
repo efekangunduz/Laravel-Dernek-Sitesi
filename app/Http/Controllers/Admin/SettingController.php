@@ -100,6 +100,7 @@ class SettingController extends Controller
         $data->youtube=$request->input('youtube');
         $data->aboutus=$request->input('aboutus');
         $data->contact=$request->input('contact');
+        $data->contact=$request->input('references');
         $data->status=$request->input('status');
         $data->save();
         return redirect()->route('admin_setting');

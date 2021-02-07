@@ -114,10 +114,15 @@
                                 <label >Contact</label>
                                 <textarea id="contact" name="contact">{{ $data->contact }}</textarea>
                             </div>
+                            <div class="form-group">
+                                <label >References</label>
+                                <textarea id="references" name="references">{{ $data->references }}</textarea>
+                            </div>
                             <script>
                                 $(document).ready(function() {
                                     $('#aboutus').summernote();
                                     $('#contact').summernote();
+                                    $('#references').summernote();
                                 });
                             </script>
                             <div class="form-group">
