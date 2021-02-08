@@ -42,6 +42,7 @@
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Status</th>
+                                    <th>Image</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr></thead>
@@ -56,6 +57,11 @@
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->status}}</td>
+                                        <td>
+                                            @if ($rs->image)
+                                                <img src="{{ Storage::url($rs->image) }}" height="30" alt="">
+                                            @endif
+                                        </td>
                                         <td><a class="btn btn-primary btn-round" href="{{route('admin_duyuru_edit',['id'=>$rs->id])}}"> Edit</a></td>
                                         <td><a class="btn btn-primary btn-round" href="{{route('admin_duyuru_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete? Are you sure?')">Delete</a></td>
                                     </tr>

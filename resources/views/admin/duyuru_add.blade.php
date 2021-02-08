@@ -37,7 +37,7 @@
             </div>
             <div class="card-body">
                     <!-- form start -->
-                    <form role="form" action="{{route('admin_duyuru_store')}}" method="post">
+                    <form role="form" action="{{route('admin_duyuru_store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -75,6 +75,10 @@
                             <div class="form-group">
                                 <label>Slug</label>
                                 <input type="text" name="slug" class="form-control">
+                            </div>
+                            <div style="text-align: center" class="form-group">
+                                <label>Image</label>
+                                <input type="file" name="image"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Status</label>

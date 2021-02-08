@@ -37,7 +37,7 @@
             </div>
             <div class="card-body">
                     <!-- form start -->
-                    <form role="form" action="{{route('admin_duyuru_update',['id'=>$data->id])}}" method="post">
+                    <form role="form" action="{{route('admin_duyuru_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -76,6 +76,13 @@
                             <div class="form-group">
                                 <label>Slug</label>
                                 <input type="text" name="slug" value="{{ $data->slug }}" class="form-control">
+                            </div>
+                            <div style="text-align: center; height: 70px" class= "form-group">
+                                <label>Image</label>
+                                <input type="file" name="image" value="{{$data->image}}" class="form-control">
+                                @if ($data->image)
+                                    <img src="{{ Storage::url($data->image) }}" height="60" align="center" alt="">
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Status</label>

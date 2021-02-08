@@ -8,6 +8,7 @@ use App\Models\Duyuru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DuyuruController extends Controller
 {
@@ -50,6 +51,8 @@ class DuyuruController extends Controller
         $data->user_id= Auth::id();
         $data->detail=$request->input('detail');
         $data->slug=$request->input('slug');
+        $data->image = Storage::putFile('images', $request->file('image'));
+        $data->status=$request->input('status');
         $data->save();
         return redirect()->route('admin_duyurus');
     }
@@ -95,6 +98,8 @@ class DuyuruController extends Controller
         $data->user_id= Auth::id();
         $data->detail=$request->input('detail');
         $data->slug=$request->input('slug');
+        $data->image = Storage::putFile('images', $request->file('image'));
+        $data->status=$request->input('status');
         $data->save();
         return redirect()->route('admin_duyurus');
     }
