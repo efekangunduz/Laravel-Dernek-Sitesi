@@ -89,7 +89,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            --!>
+                            -->
                                 <!-- Search Button -->
                             <div class="search-btn">
                                 <i class="fa fa-search" aria-hidden="true"></i>

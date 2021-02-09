@@ -5,15 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {return view('home.index');
-});
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references',[HomeController::class, 'references'])->name('references');
 Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/duyuru/{id}/{slug}', [HomeController::class, 'duyuru'])->name('duyuru');
 
 //Route::get('test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');

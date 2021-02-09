@@ -1,3 +1,6 @@
+@php
+$setting= \App\Http\Controllers\HomeController::getsetting();
+@endphp
 @extends('layouts.home')
 
 @section('title',$setting->title)
@@ -8,20 +11,7 @@
 
     @include('home._slider')
 
-    <!-- ##### CTA Area Start ##### -->
-    <div class="faith-cta-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-text d-flex justify-content-between align-items-center">
-                        <h5>Duis elementum diam eget eros tincidunt, at venenatis nunc tincidunt</h5>
-                        <a href="#" class="btn faith-btn">Visitors Info</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### CTA Area End ##### -->
+
 
     <!-- ##### About Area Start ##### -->
     <section class="faith-about-area section-padding-100-0">

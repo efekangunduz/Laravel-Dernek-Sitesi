@@ -21,11 +21,23 @@ class HomeController extends Controller
     {
         return Setting::first();
     }
-
     public function index()
     {
         $setting = Setting::first();
-        return view( 'home.index', ['setting'=>$setting]);
+        $slider= Duyuru::select('id','description','title','image','detail','slug')->limit(6)->get();
+        $data= [
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'page'=>'home'
+            ];
+
+        return view( 'home.index',$data);
+    }
+    public function duyuru($id,$slug)
+    {
+        $data = Duyuru::find($id);
+        print_r($data);
+        exit();
     }
     public function aboutus()
     {
