@@ -39,6 +39,14 @@ class HomeController extends Controller
         print_r($data);
         exit();
     }
+    public function categoryduyurus($id,$slug)
+    {
+        $datalist= Duyuru::where('category_id',$id)->get();
+        $data = Category::find($id);
+        #print_r($data);
+        #exit();
+        return view( 'home.category_duyurus',['data'=>$data,'datalist'=>$datalist]);
+    }
     public function aboutus()
     {
         $setting = Setting::first();

@@ -13,6 +13,7 @@ Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/duyuru/{id}/{slug}', [HomeController::class, 'duyuru'])->name('duyuru');
+Route::get('/categoryduyurus/{id}/{slug}', [HomeController::class, 'categoryduyurus'])->name('categoryduyurus');
 
 //Route::get('test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');

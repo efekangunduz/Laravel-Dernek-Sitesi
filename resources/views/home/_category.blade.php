@@ -33,7 +33,7 @@
                                         <span class="classy-menu">Categories</span>
                                         <ul class="dropdown">
                                             @foreach($parentCategories as $rs)
-                                                <li style="font-size: 10px" class="has-down">
+                                                <li class="has-down">
                                                     <a>{{$rs->title}}</a>
 
                                                         <div class="row">
