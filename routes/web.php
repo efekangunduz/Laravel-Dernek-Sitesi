@@ -58,6 +58,16 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 });
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function() {
     Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
+    #Duyuru
+    Route::prefix('duyuru')->group(function(){
+        Route::get('/', [\App\Http\Controllers\DuyuruController::class,'index'])->name('user_duyurus');
+        Route::get('create', [\App\Http\Controllers\DuyuruController::class,'create'])->name('user_duyuru_add');
+        Route::post('store', [\App\Http\Controllers\DuyuruController::class,'store'])->name('user_duyuru_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\DuyuruController::class,'edit'])->name('user_duyuru_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\DuyuruController::class,'update'])->name('user_duyuru_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\DuyuruController::class,'destroy'])->name('user_duyuru_delete');
+        Route::get('show', [\App\Http\Controllers\DuyuruController::class,'show'])->name('user_duyuru_show');
+    });
 
 });
 

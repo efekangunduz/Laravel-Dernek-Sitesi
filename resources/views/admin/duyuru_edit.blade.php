@@ -77,13 +77,13 @@
                                 <label>Slug</label>
                                 <input type="text" name="slug" value="{{ $data->slug }}" class="form-control">
                             </div>
-                            <div style="text-align: center; height: 70px" class= "form-group">
+                            <div class= "form-group">
                                 <label>Image</label>
                                 <input type="file" name="image" value="{{$data->image}}" class="form-control">
-                                @if ($data->image)
-                                    <img src="{{ Storage::url($data->image) }}" height="60" align="center" alt="">
-                                @endif
                             </div>
+                            @if ($data->image)
+                                <img src="{{ Storage::url($data->image) }}" height="60" align="center" alt="">
+                            @endif
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control" name="status" style="width: 100%;">
