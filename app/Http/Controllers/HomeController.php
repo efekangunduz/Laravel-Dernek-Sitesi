@@ -45,8 +45,10 @@ class HomeController extends Controller
     public function duyuru($id,$slug)
     {
         $data = Duyuru::find($id);
-        print_r($data);
-        exit();
+        $datalist= Duyuru::select('title','image','slug','detail')->get();
+        #print_r($data);
+        #exit();
+        return view( 'home.duyuru_detail',['data'=>$data,'datalist'=>$datalist]);
     }
     public function categoryduyurus($id,$slug)
     {
@@ -88,7 +90,6 @@ class HomeController extends Controller
 
         return redirect()->route('contact')->with('success', 'Mesaj başarılı bir şekilde gönderildi.');
     }
-
 
 
 
