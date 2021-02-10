@@ -20,8 +20,8 @@ $setting= \App\Http\Controllers\HomeController::getsetting();
                 <div class="col-12">
                     <div class="about-content">
                         <img src="{{asset('assets')}}/img/core-img/holy-star.png" alt="">
-                        <h2>“Blessed is the one who takes refuge <br>in him.”</h2>
-                        <h6>Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</h6>
+                        <h2>“İçindeki iyiliğin<br> dışavurumu.”</h2>
+                        <h6>{{$setting->description}}</h6>
                     </div>
                 </div>
             </div>
@@ -35,9 +35,12 @@ $setting= \App\Http\Controllers\HomeController::getsetting();
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center mx-auto">
-                        <img src="{{asset('assets')}}/img/core-img/cross.png" alt="">
-                        <h3>Church Activities</h3>
-                        <p>Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh.</p>
+                        <img src="{{asset('assets')}}/img/iyilikdernegi.jpg" alt="">
+                        <h3>Dernek Aktiviteleri</h3>
+                        <p>*Türkiye ve Dünya'nın bir çok bölgesinde savaşlardan veya doğal afetlerden etkilenen topluluklara ve ihtiyaç sahibi insanlara ulaşmak için sivil toplum faaliyetleri yürütüyoruz.
+                        <br>
+                            *Amacımız mümkün olan en çok cana yetişmek, onların yaşam haklarını savunmak, tedavi ve yemek ihtiyaçlarını karşılamak. Sizi de ailemize bekleriz, gelin hep beraber onların sesi olalım.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -48,165 +51,62 @@ $setting= \App\Http\Controllers\HomeController::getsetting();
                     <div class="upcoming-events mb-100">
                         <!-- Headline -->
                         <div class="headline">
-                            <h5>Upcoming Events</h5>
+                            <h5>Son Eklenenler</h5>
                         </div>
-
+                    @foreach($yeni as $rs)
                         <!-- Single Upcoming Events -->
-                        <div class="single-upcoming-events d-flex align-items-center">
-                            <!-- Events Date & Thumbnail -->
-                            <div class="event-date-thumbnail d-flex align-items-center">
-                                <div class="event-date">
-                                    <h6>03 <br> Jun <br> 2018</h6>
+                            <div class="single-sermons">
+                                <div class="sermons-content d-flex align-items-center">
+                                    <!-- Sermons Thumbnail -->
+                                    <div class="sermons-thumbnail bg-img" style="background-image: url({{Storage::url($rs->image)}});"></div>
+                                    <!-- Sermons Content -->
+                                    <div class="sermons-text">
+                                        <a href="#">
+                                            <h6>{{$rs->title}}</h6>
+                                        </a>
+                                        <p>{{$rs->description}}</p>
+                                        <p class="date">{{$rs->created_at}}</p>
+                                    </div>
                                 </div>
-                                <div class="event-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/event1.jpg);"></div>
-                            </div>
-                            <!-- Events Content -->
-                            <div class="events-content">
-                                <a href="#">
-                                    <h6>Weekend Bible Study with believers</h6>
-                                </a>
-                                <p>8:00 pm @ Main hall</p>
-                            </div>
-                        </div>
 
-                        <!-- Single Upcoming Events -->
-                        <div class="single-upcoming-events d-flex align-items-center">
-                            <!-- Events Date & Thumbnail -->
-                            <div class="event-date-thumbnail d-flex align-items-center">
-                                <div class="event-date">
-                                    <h6>09 <br> Jun <br> 2018</h6>
+                                <div class="all-events-btn">
+                                    <a href="{{route('duyuru',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn faith-btn active">Detaylar İçin Tıklayın</a>
                                 </div>
-                                <div class="event-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/event2.jpg);"></div>
                             </div>
-                            <!-- Events Content -->
-                            <div class="events-content">
-                                <a href="#">
-                                    <h6>Bible Study for Childrens</h6>
-                                </a>
-                                <p>8:00 pm @ Main hall</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Upcoming Events -->
-                        <div class="single-upcoming-events d-flex align-items-center">
-                            <!-- Events Date & Thumbnail -->
-                            <div class="event-date-thumbnail d-flex align-items-center">
-                                <div class="event-date">
-                                    <h6>11 <br> Jun <br> 2018</h6>
-                                </div>
-                                <div class="event-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/event3.jpg);"></div>
-                            </div>
-                            <!-- Events Content -->
-                            <div class="events-content">
-                                <a href="#">
-                                    <h6>Weekend Bible Study with believers</h6>
-                                </a>
-                                <p>8:00 pm @ Main hall</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Upcoming Events -->
-                        <div class="single-upcoming-events d-flex align-items-center">
-                            <!-- Events Date & Thumbnail -->
-                            <div class="event-date-thumbnail d-flex align-items-center">
-                                <div class="event-date">
-                                    <h6>25 <br> Jun <br> 2018</h6>
-                                </div>
-                                <div class="event-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/event4.jpg);"></div>
-                            </div>
-                            <!-- Events Content -->
-                            <div class="events-content">
-                                <a href="#">
-                                    <h6>Bible Study for Childrens</h6>
-                                </a>
-                                <p>8:00 pm @ Main hall</p>
-                            </div>
-                        </div>
-
-                        <div class="all-events-btn">
-                            <a href="#" class="btn faith-btn active">See All Events</a>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <!-- Latest Sermons -->
                     <div class="latest-sermons mb-100">
                         <div class="headline">
-                            <h5>Latest Sermons</h5>
+                            <h5>Random Events</h5>
                         </div>
-
+                        @foreach($randomevent as $rs)
                         <!-- Single Sermons Area -->
                         <div class="single-sermons">
                             <div class="sermons-content d-flex align-items-center">
                                 <!-- Sermons Thumbnail -->
-                                <div class="sermons-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/ser1.jpg);"></div>
+                                <div class="sermons-thumbnail bg-img" style="background-image: url({{Storage::url($rs->image)}});"></div>
                                 <!-- Sermons Content -->
                                 <div class="sermons-text">
                                     <a href="#">
-                                        <h6>Weekend Bible Study with believers</h6>
+                                        <h6>{{$rs->title}}</h6>
                                     </a>
-                                    <p>By Priest Michael Smith</p>
-                                    <p class="date">02 April, 2018</p>
+                                    <p>{{$rs->description}}</p>
+                                    <p class="date">{{$rs->created_at}}</p>
                                 </div>
                             </div>
                             <div class="sermons-audio-player d-flex align-items-center">
                                 <audio preload="auto" controls>
                                     <source src="{{asset('assets')}}/audio/dummy-audio.mp3">
                                 </audio>
-                                <div class="see-more-btn">
-                                    <a href="#">See More</a>
+                                <div class="all-events-btn">
+                                    <a href="{{route('duyuru',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn faith-btn active">Detaylar İçin Tıklayın</a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Single Sermons Area -->
-                        <div class="single-sermons">
-                            <div class="sermons-content d-flex align-items-center">
-                                <!-- Sermons Thumbnail -->
-                                <div class="sermons-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/ser2.jpg);"></div>
-                                <!-- Sermons Content -->
-                                <div class="sermons-text">
-                                    <a href="#">
-                                        <h6>Weekend Bible Study with believers</h6>
-                                    </a>
-                                    <p>By Priest Michael Smith</p>
-                                    <p class="date">02 April, 2018</p>
-                                </div>
-                            </div>
-                            <div class="sermons-audio-player d-flex align-items-center">
-                                <audio preload="auto" controls>
-                                    <source src="{{asset('assets')}}/audio/dummy-audio.mp3">
-                                </audio>
-                                <div class="see-more-btn">
-                                    <a href="#">See More</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Sermons Area -->
-                        <div class="single-sermons">
-                            <div class="sermons-content d-flex align-items-center">
-                                <!-- Sermons Thumbnail -->
-                                <div class="sermons-thumbnail bg-img" style="background-image: url({{asset('assets')}}/img/bg-img/ser3.jpg);"></div>
-                                <!-- Sermons Content -->
-                                <div class="sermons-text">
-                                    <a href="#">
-                                        <h6>Weekend Bible Study with believers</h6>
-                                    </a>
-                                    <p>By Priest Michael Smith</p>
-                                    <p class="date">02 April, 2018</p>
-                                </div>
-                            </div>
-                            <div class="sermons-audio-player d-flex align-items-center">
-                                <audio preload="auto" controls>
-                                    <source src="{{asset('assets')}}/audio/dummy-audio.mp3">
-                                </audio>
-                                <div class="see-more-btn">
-                                    <a href="#">See More</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -216,208 +116,42 @@ $setting= \App\Http\Controllers\HomeController::getsetting();
 
     <!-- ##### Donate Area Start ##### -->
     <section class="donate-our-charities section-padding-100 bg-img bg-overlay" style="background-image: url({{asset('assets')}}/img/bg-img/bg-3.jpg);">
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading white text-center mx-auto">
-                        <img src="{{asset('assets')}}/img/core-img/cross.png" alt="">
-                        <h3>Donate to our Charities</h3>
-                        <p>Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh.</p>
+                        <img src="{{asset('assets')}}/img/iyilikdernegi.jpg" alt="">
+                        <h3>Bağış Yapmak İçin</h3>
+                        <p>Buluşmalara gönüllü katılmaya vaktiniz yoksa bağışlarınızla da destek olabilirsiniz.</p>
                     </div>
                 </div>
             </div>
 
+
             <div class="row">
                 <div class="col-12">
                     <div class="donate-slides owl-carousel">
-
+                    @foreach($donate as $rs)
                         <!-- Single Donate Slide Area -->
                         <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate1.jpg" alt="">
+                            <img style=" width: 286px; height: 513px" src="{{Storage::url($rs->image)}}" alt="">
                             <!-- Donate Content -->
                             <div class="donate-content">
-                                <h4>Church Building</h4>
-                                <p>Renovate the Church</p>
+                                <h4>{{$rs->title}}</h4>
                             </div>
                             <!-- Donate Button -->
                             <div class="donate-btn text-center">
                                 <a href="#" class="btn faith-btn active">Donate</a>
                             </div>
                         </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate2.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Teens Found</h4>
-                                <p>For the young</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate3.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Child Found</h4>
-                                <p>For the kids</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate4.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Church Building</h4>
-                                <p>Renovate the Church</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate1.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Church Building</h4>
-                                <p>Renovate the Church</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate2.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Teens Found</h4>
-                                <p>For the young</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate3.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Child Found</h4>
-                                <p>For the kids</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
-                        <!-- Single Donate Slide Area -->
-                        <div class="single-donate-slide">
-                            <img src="{{asset('assets')}}/img/bg-img/donate4.jpg" alt="">
-                            <!-- Donate Content -->
-                            <div class="donate-content">
-                                <h4>Church Building</h4>
-                                <p>Renovate the Church</p>
-                            </div>
-                            <!-- Donate Button -->
-                            <div class="donate-btn text-center">
-                                <a href="#" class="btn faith-btn active">Donate</a>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ##### Donate Area End ##### -->
-
-    <!-- ##### Blog Area Start ##### -->
-    <div class="faith-blog-area section-padding-100-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center mx-auto">
-                        <img src="{{asset('assets')}}/img/core-img/cross.png" alt="">
-                        <h3>Latest News</h3>
-                        <p>Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id, finibus nibh.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area mb-100">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('assets')}}/img/blog-img/1.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">03 April, 2018</a>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <a href="#" class="blog-title">New Community rules</a>
-                            <p>Fusce nec ante vitae lacus aliquet vulp utate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis.</p>
-                            <a href="#" class="readmore-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area mb-100">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('assets')}}/img/blog-img/2.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">03 April, 2018</a>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <a href="#" class="blog-title">A perfect afternoon at church</a>
-                            <p>Fusce nec ante vitae lacus aliquet vulp utate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis.</p>
-                            <a href="#" class="readmore-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-blog-area mb-100">
-                        <div class="blog-thumbnail">
-                            <img src="{{asset('assets')}}/img/blog-img/3.jpg" alt="">
-                            <div class="post-date">
-                                <a href="#">03 April, 2018</a>
-                            </div>
-                        </div>
-                        <div class="blog-content">
-                            <a href="#" class="blog-title">Bible studies for kids</a>
-                            <p>Fusce nec ante vitae lacus aliquet vulp utate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis.</p>
-                            <a href="#" class="readmore-btn">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Area End ##### -->
 
 @endsection
 

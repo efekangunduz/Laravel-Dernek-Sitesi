@@ -65,16 +65,15 @@
                         </div>
                         <nav>
                             <ul class="useful-links">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Sermons</a></li>
-                                <li><a href="#">Ministries</a></li>
-                                <li><a href="#">News</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('aboutus')}}">About Us</a></li>
+                                <li><a href="{{route('references')}}">References</a></li>
+                                <li><a href="{{route('faq')}}">FAQ</a></li>
                                 @guest
                                 <li><a href="{{route('admin_login')}}">Login</a></li>
                                 <li><a href="/register">Register</a></li>
                                 @endguest
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -84,9 +83,9 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-100">
                         <div class="widget-title">
-                            <h6>Why Choose us?</h6>
+                            <h6>İYİLİKTEN HABERİNİZ OLSUN</h6>
                         </div>
-                        <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque.</p>
+                        <p>E-Posta bültenimize abone olarak iyilik serüvenimizin mutlu anlarından haberdar olabilirsiniz.</p>
                         <a href="#" class="btn faith-btn mt-70">Sunday Workship: 10:30 AM</a>
                     </div>
                 </div>

@@ -23,9 +23,8 @@
                         <!-- Slides Content -->
                         <div class="hero-slides-content @if($i==1) active @endif">
                             <h6 class="date" data-animation="fadeInUp" data-delay="100ms">{{$rs->id}}</h6>
-                            <h3 data-animation="fadeInUp" data-delay="300ms">{{$rs->description}}</h3>
                             <h2 data-animation="fadeInUp" data-delay="500ms">{{$rs->title}}</h2>
-                            <p data-animation="fadeInUp" data-delay="700ms">{!! $rs->detail !!}</p>
+                            <p data-animation="fadeInUp" data-delay="700ms">{{$rs->description}}</p>
                         </div>
                     </div>
                 </div>

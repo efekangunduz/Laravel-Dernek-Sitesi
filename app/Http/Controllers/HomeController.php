@@ -24,14 +24,23 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider= Duyuru::select('id','description','title','image','detail','slug')->limit(6)->get();
+        $slider= Duyuru::select('id','description','title','image','slug')->limit(4)->get();
+        $randomevent= Duyuru::select('id','description','title','image','slug')->limit(4)->inRandomOrder()->get();
+        $yeni= Duyuru::select('id','description','title','image','slug')->limit(4)->orderByDesc('id')->get();
+        $donate = Duyuru::select('title','image')->inRandomOrder('id')->limit(4)->get();
+        #print_r($randomevent);
+        #exit();
+
         $data= [
             'setting'=>$setting,
+            'randomevent'=>$randomevent,
+            'yeni'=>$yeni,
             'slider'=>$slider,
+            'donate'=>$donate,
             'page'=>'home'
             ];
 
-        return view( 'home.index',$data);
+        return view( 'home.index',$data); #tek tek slider setting göndermek yerine
     }
     public function duyuru($id,$slug)
     {
@@ -79,6 +88,7 @@ class HomeController extends Controller
 
         return redirect()->route('contact')->with('success', 'Mesaj başarılı bir şekilde gönderildi.');
     }
+
 
 
 

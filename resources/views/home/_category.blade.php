@@ -7,7 +7,7 @@
                 <nav class="classy-navbar justify-content-between" id="faithNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="{{route('home')}}"><img src="{{asset('assets')}}/img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="{{route('home')}}"><img src="{{asset('assets')}}/img/iyilikdernegi.jpg" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
