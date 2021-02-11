@@ -70,7 +70,7 @@ class HomeController extends Controller
     }
     public function faq()
     {
-        return view( 'home.about');
+        return view( 'home.faq'); #aktif değil
     }
 
     public function contact()

@@ -8,6 +8,7 @@
         @php
             $i=0;
         @endphp
+
     @foreach($slider as $rs)
         <!-- Single Hero Slide -->
 
@@ -42,6 +43,5 @@
         </div>
 
     @endforeach
-
 </section>
 <!-- ##### Hero Area End ##### -->

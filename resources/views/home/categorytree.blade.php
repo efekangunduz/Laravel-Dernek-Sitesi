@@ -6,7 +6,8 @@
                  @include('home.categorytree', ['children'=> $subcategory->children])
 
         @else
-            <li style="width: auto" class="has-down"><a href="{{route('categoryduyurus', ['id'=>$subcategory->id, 'slug'=>$subcategory->slug])}}">{{ $subcategory->title}}</a></li>
+            <li class="has-down"><a href="{{route('categoryduyurus', ['id'=>$subcategory->id, 'slug'=>$subcategory->slug])}}">{{ $subcategory->title}}</a></li>
         @endif
+
     </ul>
 @endforeach
