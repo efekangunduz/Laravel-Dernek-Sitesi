@@ -49,7 +49,10 @@ class DuyuruController extends Controller
         $data->user_id= Auth::id();
         $data->detail=$request->input('detail');
         $data->slug=$request->input('slug');
-        $data->image = Storage::putFile('images', $request->file('image'));
+        if($request->file('image')!=null)
+        {
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->status=$request->input('status');
         $data->save();
         return redirect()->route('user_duyurus')->with('success','Duyuru Başarıyla Eklendi.');
@@ -96,7 +99,10 @@ class DuyuruController extends Controller
         $data->user_id= Auth::id();
         $data->detail=$request->input('detail');
         $data->slug=$request->input('slug');
-        $data->image = Storage::putFile('images', $request->file('image'));
+        if($request->file('image')!=null)
+        {
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->status=$request->input('status');
         $data->save();
         return redirect()->route('user_duyurus');

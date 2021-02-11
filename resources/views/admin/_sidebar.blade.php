@@ -23,33 +23,15 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
+                <a class="nav-link" href="{{route('admin_users')}}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>User List</p>
                 </a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="{{ route('admin_message') }}">
                     <i class="material-icons">library_books</i>
                     <p>Contact Messages</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./icons.html">
-                    <i class="material-icons">bubble_chart</i>
-                    <p>Icons</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./map.html">
-                    <i class="material-icons">location_ons</i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./notifications.html">
-                    <i class="material-icons">notifications</i>
-                    <p>Notifications</p>
                 </a>
             </li>
             <li class="nav-item ">

@@ -45,8 +45,11 @@
 
                         <!-- Single Contact Area -->
                         <div class="single-contact-area mb-30">
-                            <p>Phone:<br>Fax:</p>
-                            <span>{{$setting->phone}} <br>{{$setting->fax}}</span>
+                            <p>Phone:</p>
+                            <span>{{$setting->phone}}</span>
+                            <p><br>Fax:</p>
+                            <span><br>{{$setting->fax}}</span>
+
                         </div>
 
                         <!-- Single Contact Area -->

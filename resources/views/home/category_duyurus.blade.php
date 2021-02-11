@@ -31,6 +31,7 @@
     <div class="container">
         <div class="row">
             <!-- Single Blog Area -->
+            @if($datalist->status=1)
             @foreach($datalist as $rs)
             <div class="col-12 col-lg-6">
                 <div class="single-blog-area mb-100">
@@ -48,6 +49,7 @@
                 </div>
             </div>
             @endforeach
+        @endif
         </div>
     </div>
 </div>

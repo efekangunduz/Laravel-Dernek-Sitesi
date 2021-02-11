@@ -6,6 +6,7 @@
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;">Dashboard</a>
         </div>
+        @include('home.message')
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -56,6 +57,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                         @auth
+                            <div class="image">
+                                @if (Auth::user()->profile_photo_path)
+                                    <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" height="50" style="border-radius: 10px" class="img-circle elevation-2" alt="User-Image">
+                                @endif
+
                         <a class="dropdown-item" href="#">Profile</a>
                         <a class="dropdown-item" href="">Settings</a>
                         <div class="dropdown-divider"></div>

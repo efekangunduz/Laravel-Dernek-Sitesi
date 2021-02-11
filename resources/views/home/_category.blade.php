@@ -61,7 +61,12 @@
                                         @auth
                                             <a class="dropdown-item" href="{{route('myprofile')}}">Profile</a>
                                             <a class="dropdown-item" href="#">Settings</a>
+                                            @php
+                                                $userRoles= Auth::user()->roles->pluck('name');
+                                            @endphp
+                                            @if($userRoles->contains('admin')or($userRoles)->contains('duyuru'))
                                             <a class="dropdown-item" href="{{route('user_duyurus')}}">Duyurularım</a>
+                                            @endif
                                             <div class="dropdown-divider"></div>
                                             <a href="#" class="d-block">{{Auth::user()->name}}{{ Auth::user()->roles->pluck('name')}}</a>
 

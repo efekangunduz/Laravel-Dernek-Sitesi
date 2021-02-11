@@ -15,7 +15,9 @@
                             @if($userRoles->contains('admin'))
                             <li><a href="{{route('admin_home')}}">AdminProfilim</a></li>
                             @endif
+                            @if($userRoles->contains('admin')or($userRoles)->contains('duyuru'))
                             <li><a href="{{route('user_duyurus')}}">Duyurularım</a></li>
+                            @endif
                             <li><a href="#">Mesajlarım</a></li>
                             <li><a href="{{route('logout')}}">Logout</a></li>
                         </ul>

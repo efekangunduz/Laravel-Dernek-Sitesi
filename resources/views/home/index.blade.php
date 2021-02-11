@@ -98,9 +98,7 @@ $setting= \App\Http\Controllers\HomeController::getsetting();
                                 </div>
                             </div>
                             <div class="sermons-audio-player d-flex align-items-center">
-                                <audio preload="auto" controls>
-                                    <source src="{{asset('assets')}}/audio/dummy-audio.mp3">
-                                </audio>
+
                                 <div class="all-events-btn">
                                     <a href="{{route('duyuru',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn faith-btn active">Detaylar İçin Tıklayın</a>
                                 </div>
