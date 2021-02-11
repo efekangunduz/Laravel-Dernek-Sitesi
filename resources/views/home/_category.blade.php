@@ -63,7 +63,7 @@
                                             <a class="dropdown-item" href="#">Settings</a>
                                             <a class="dropdown-item" href="{{route('user_duyurus')}}">Duyurularım</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                                            <a href="#" class="d-block">{{Auth::user()->name}}{{ Auth::user()->roles->pluck('name')}}</a>
 
                                             <a href="{{ route('logout') }}" class="d-block">Logout</a>
                                         @endauth

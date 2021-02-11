@@ -19,38 +19,41 @@ Route::get('/categoryduyurus/{id}/{slug}', [HomeController::class, 'categoryduyu
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
 //Admin
-Route::middleware('auth')->prefix('admin')->group(function(){
-    Route::get('/', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
-#Kategori
-    Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-    Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
-    Route::post('category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
-    Route::get('category/edit/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'edit'])->name('admin_category_edit');
-    Route::post('category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
-    Route::get('category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
-    Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
-#Duyuru
-    Route::prefix('duyuru')->group(function(){
-        Route::get('/', [\App\Http\Controllers\Admin\DuyuruController::class,'index'])->name('admin_duyurus');
-        Route::get('create', [\App\Http\Controllers\Admin\DuyuruController::class,'create'])->name('admin_duyuru_add');
-        Route::post('store', [\App\Http\Controllers\Admin\DuyuruController::class,'store'])->name('admin_duyuru_store');
-        Route::get('edit/{id}', [\App\Http\Controllers\Admin\DuyuruController::class,'edit'])->name('admin_duyuru_edit');
-        Route::post('update/{id}', [\App\Http\Controllers\Admin\DuyuruController::class,'update'])->name('admin_duyuru_update');
-        Route::get('delete/{id}', [\App\Http\Controllers\Admin\DuyuruController::class,'destroy'])->name('admin_duyuru_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\DuyuruController::class,'show'])->name('admin_duyuru_show');
-    });
+Route::middleware('auth')->prefix('admin')->group(function() {
+    #Admin role
+    Route::middleware('admin')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+        #Kategori
+        Route::get('category', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
+        Route::get('category/add', [\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
+        Route::post('category/create', [\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin_category_create');
+        Route::get('category/edit/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
+        Route::post('category/update/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
+        Route::get('category/delete/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
+        Route::get('category/show', [\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
+        #Duyuru
+        Route::prefix('duyuru')->group(function () {
+            Route::get('/', [\App\Http\Controllers\Admin\DuyuruController::class, 'index'])->name('admin_duyurus');
+            Route::get('create', [\App\Http\Controllers\Admin\DuyuruController::class, 'create'])->name('admin_duyuru_add');
+            Route::post('store', [\App\Http\Controllers\Admin\DuyuruController::class, 'store'])->name('admin_duyuru_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\DuyuruController::class, 'edit'])->name('admin_duyuru_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\DuyuruController::class, 'update'])->name('admin_duyuru_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\DuyuruController::class, 'destroy'])->name('admin_duyuru_delete');
+            Route::get('show', [\App\Http\Controllers\Admin\DuyuruController::class, 'show'])->name('admin_duyuru_show');
+        });
 #message
-    Route::prefix('messages')->group(function(){
-        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class,'index'])->name('admin_message');
-        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class,'edit'])->name('admin_message_edit');
-        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class,'update'])->name('admin_message_update');
-        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class,'destroy'])->name('admin_message_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class,'show'])->name('admin_message_show');
-    });
+        Route::prefix('messages')->group(function () {
+            Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+            Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+        });
 
 #Setting
-    Route::get('setting',[\App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
-    Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
+        Route::get('setting', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+        Route::post('setting/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+    });
 });
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function() {
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
